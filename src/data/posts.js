@@ -13,7 +13,7 @@ export const posts = [
                 我们习惯了随时随地被信息轰炸，却忘记了如何与自己独处。孤独不是寂寞，而是一种清醒的自我审视。正如里尔克所说：“这是我们必须时常回去的地方。”
             </p>
             <div class="aspect-[16/9] bg-gray-100 my-10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1499750310159-5254f4cc1575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=80"
                     alt="Reading"
                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 <p class="text-center text-xs text-muted mt-2 italic">A quiet afternoon.</p>
@@ -40,7 +40,7 @@ export const posts = [
                 我在厨房里忙活了一下午，尝试复刻那杯在咖啡馆喝过的海盐樱花气泡水。腌制的樱花在透明的苏打水中舒展开来，像极了某种无声的绽放。
             </p>
             <div class="aspect-[16/9] bg-gray-100 my-10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1522439733008-j6231d6832db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80"
                     alt="Cherry Blossoms"
                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 <p class="text-center text-xs text-muted mt-2 italic">Spring vibes.</p>
@@ -67,7 +67,7 @@ export const posts = [
                 那时候觉得直子的忧郁很迷人，现在才明白，那种会将周围人一同拖入深渊的脆弱，其实是一种残酷。而绿子，那个留着短发、戴着墨镜的女孩，才是真正的光。
             </p>
             <div class="aspect-[16/9] bg-gray-100 my-10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1200&q=80"
                     alt="Forest"
                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 <p class="text-center text-xs text-muted mt-2 italic">Deep in the woods.</p>
