@@ -13,7 +13,7 @@ export const posts = [
                 我们习惯了随时随地被信息轰炸，却忘记了如何与自己独处。孤独不是寂寞，而是一种清醒的自我审视。正如里尔克所说：“这是我们必须时常回去的地方。”
             </p>
             <div class="aspect-[16/9] bg-gray-100 my-10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=80"
+                <img src="https://pic4.zhimg.com/v2-bcccf86e454bf33ce320f9c2eaa55b3f_1440w.jpg"
                     alt="Reading"
                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 <p class="text-center text-xs text-muted mt-2 italic">A quiet afternoon.</p>
