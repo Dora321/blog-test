@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,17 +16,26 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Scroll to hash if present
-    useEffect(() => {
-        if (location.hash) {
-            const element = document.querySelector(location.hash);
-            if (element) {
-                setTimeout(() => {
+    const scrollToSection = (e, id) => {
+        e.preventDefault();
+        setIsMobileMenuOpen(false);
+
+        if (location.pathname !== '/') {
+            navigate('/');
+            // Short delay to allow navigation to complete
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                }
+            }, 100);
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
             }
         }
-    }, [location]);
+    };
 
     const navClasses = `fixed top-0 w-full z-40 px-6 py-6 md:px-12 md:py-8 flex justify-between items-center mix-blend-difference text-ink transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4 md:py-4' : ''
         }`;
@@ -38,7 +48,12 @@ export default function Navbar() {
                 </Link>
                 <div className="hidden md:flex gap-12 text-sm tracking-widest uppercase opacity-80">
                     {['about', 'gallery', 'journal', 'contact'].map((item) => (
-                        <a key={item} href={`/#${item}`} className="hover:text-accent transition-colors relative group">
+                        <a
+                            key={item}
+                            href={`#${item}`}
+                            onClick={(e) => scrollToSection(e, item)}
+                            className="hover:text-accent transition-colors relative group cursor-pointer"
+                        >
                             {item === 'about' ? '关于' : item === 'gallery' ? '光影' : item === 'journal' ? '随笔' : '写信'}
                             <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full"></span>
                         </a>
@@ -55,7 +70,12 @@ export default function Navbar() {
                     <X className="w-8 h-8 text-ink" />
                 </button>
                 {['about', 'gallery', 'journal', 'contact'].map((item) => (
-                    <a key={item} href={`/#${item}`} className="text-2xl tracking-widest text-ink" onClick={() => setIsMobileMenuOpen(false)}>
+                    <a
+                        key={item}
+                        href={`#${item}`}
+                        className="text-2xl tracking-widest text-ink cursor-pointer"
+                        onClick={(e) => scrollToSection(e, item)}
+                    >
                         {item === 'about' ? '关于' : item === 'gallery' ? '光影' : item === 'journal' ? '随笔' : '写信'}
                     </a>
                 ))}
